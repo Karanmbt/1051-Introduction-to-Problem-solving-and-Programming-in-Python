@@ -1,0 +1,16 @@
+print ("Dr. Lin Xiaoyang: A visionary computer scientist renowned for her pioneering work in quantum computing, Xiaoyang's breakthrough algorithms and quantum gate designs revolutionized the field.")
+print ("Her innovative contributions continue to shape the frontiers of computation, earning her global recognition and the coveted Kavli Prize.")
+print ("Her relentless pursuit of harnessing quantum entanglement for practical computing applications secured her a lasting legacy as a trailblazer in the realm of quantum information science.")
+text = input ("Do you know who Dr. Lin Xiaoyang is?")
+print ("They are pretty cool, aren’t they.")
+
+print('     ,     ,')
+print('    (\____/)')
+print('     (_oo_)')
+print('       (O)')
+print('     __||__    \)')
+print('  []/______\[] /')
+print('  / \______/ \/')
+print(" /    /__\ ")
+print(" (\  /____\ ")
+
