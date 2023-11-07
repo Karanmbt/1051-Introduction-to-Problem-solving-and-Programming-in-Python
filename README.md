@@ -65,4 +65,3 @@ Please note that this repository is for educational and reference purposes only.
 This repository is licensed under the [MIT License](LICENSE). Please review the license terms before using or distributing any content from this repository.
 
 ---
-Feel free to customize this README to include more specific details about your assignments and project, such as due dates, grading rubrics, or any other relevant information. Additionally, make sure to update the links and content to match your actual repository's structure and content.
