@@ -1,82 +1,58 @@
 import random
 
-"""
-Our first exercise is to simulate a single turn of Pig where a player rolls until a 1 (“pig”) is rolled, or the turn total is greater than or equal to 20. 
-We will call this strategy Hold-at-20. The user doesn't need to make any choices, the computer will roll automagically, following the hold-at-20 strategy.
 
-For each roll, print a line with “Roll:” and the random die roll value (1-6).
-
-After a “pig” roll of 1, or a “hold,” print a line with “Turn total:”
-followed by the turn total. In the case of a “pig,” this turn total is 0
-
-Roll: 4
-Roll: 5
-Roll: 6
-Roll: 5
-Turn total: 20
-...
-Roll: 3
-Roll: 1
-Turn total: 0
-
-"""
-
-def rolld6():
-    return random.randint(1,6)
-
-
-def holdAt20Turn():
+def holdAt20(limit=20):
     turnTotal = 0
-    while turnTotal < 20:
-        points = rolld6()
-        #print("Roll:",points)
-        if points == 1:
+    while turnTotal < limit:
+        roll = random.randint(1, 6)
+        # print("Roll:", roll)
+        if roll == 1:
             turnTotal = 0
-            break
+            # print("Turn Total:", turnTotal)
+            return turnTotal
         else:
-            turnTotal += points
-    #print("Turn total:",turnTotal)
+            turnTotal += roll
+    # print("Turn Total:", turnTotal)
     return turnTotal
 
 
-"""
-Simulate a given number of hold-at-20 turns, and report the estimated probabilities of the possible scoring outcomes.
-
-How many Hold-at-20 turn simulations?
-1000000
-Score Estimated Probability
-0 0.624076
-20 0.099659
-21 0.095310
-22 0.074086
-23 0.054599
-24 0.035313
-25 0.016957
-"""
-
-
-def holdAt20Sim(trials):
-    results  = {} 
+def holdAt20Outcomes(trials):
+    outcomes = {0: 0}
+    for val in range(20, 26):
+        outcomes[val] = 0
     for _ in range(trials):
-        turnTotal = holdAt20Turn()
-        if turnTotal in results:
-            results[turnTotal] += 1
-        else: 
-            results[turnTotal]  = 1 
-    for score in results:
-        results[score] = results[score]/trials
-    return results
+        score = holdAt20()
+        outcomes[score] += 1
+    for score in outcomes:
+        print(score, outcomes[score] / trials)
 
 
-results =  holdAt20Sim(1000)
-print("Score\tEstimated Probability")
-for score in sorted(results):
-    print(score,results[score],sep="\t")
+# 20 21 22 23 24 25
+# 42 43 44 45 46 47
 
 
-"""
-Hold-at-X Outcomes
-As the previous exercise, but allow the user to specify the hold value. What
-is the probability of reaching 100 in a single turn if you allow the cpu to
-hold at 100?
-"""
+def holdAtXOutcomes(limit, trials):
+    outcomes = {0: 0}
+    for score in range(limit, limit + 6):
+        outcomes[score] = 0
+    for _ in range(trials):
+        score = holdAt20(limit)
+        outcomes[score] += 1
+    for score in outcomes:
+        print(score, outcomes[score] / trials)
+
+
+holdAtXOutcomes(100, 100000)
+
+
+def holdAt20orGoal(limit, score):
+    turnTotal = 0
+    while turnTotal < limit and turnTotal + score < 100:
+        roll = random.randint(1, 6)
+        # print("Roll:", roll)
+        if roll == 1:
+            turnTotal = 0
+            return 0, score
+        else:
+            turnTotal += roll
+    return turnTotal, score + turnTotal
