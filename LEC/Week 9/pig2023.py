@@ -42,7 +42,7 @@ def holdAtXOutcomes(limit, trials):
         print(score, outcomes[score] / trials)
 
 
-holdAtXOutcomes(100, 100000)
+holdAtXOutcomes(20, 100000)
 
 
 def holdAt20orGoal(limit, score):

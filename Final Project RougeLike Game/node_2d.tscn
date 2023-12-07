@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://gg8i4hwadqpy"]
+
+[ext_resource type="Script" path="res://HBoxContainer.gd" id="1_lp1uu"]
+[ext_resource type="Texture2D" uid="uid://blu4w1cwjghhy" path="res://hud_heartFull.png" id="2_ndoa2"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(50, 50)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 5
+script = ExtResource("1_lp1uu")
+
+[node name="1" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ndoa2")
+stretch_mode = 2
+
+[node name="2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ndoa2")
+stretch_mode = 2
+
+[node name="3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ndoa2")
+stretch_mode = 2
+
+[node name="4" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ndoa2")
+stretch_mode = 2
+
+[node name="5" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ndoa2")
+stretch_mode = 2
