@@ -42,8 +42,6 @@ def holdAtXOutcomes(limit, trials):
         print(score, outcomes[score] / trials)
 
 
-holdAtXOutcomes(20, 100000)
-
 
 def holdAt20orGoal(limit, score):
     turnTotal = 0
