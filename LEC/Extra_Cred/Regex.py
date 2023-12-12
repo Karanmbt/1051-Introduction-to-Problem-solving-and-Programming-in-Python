@@ -1,3 +1,7 @@
+import re
+import random
+
+
 # Q1. I like animals. How many words contain the word ’cat’ or ’dog’ in them?
 def cat_dog():
     file = open("LEC\Extra_Cred\words.txt", "r")
@@ -84,6 +88,7 @@ def q_but_no_u():
             count += 1
     print("There are", count, "words that contain q not immediately followed by u")
 
+
 q_but_no_u()
 
 
@@ -94,10 +99,17 @@ def no_vowels():
     file.close()
     count = 0
     for word in words:
-        if "a" not in word and "e" not in word and "i" not in word and "o" not in word and "u" not in word:
+        if (
+            "a" not in word
+            and "e" not in word
+            and "i" not in word
+            and "o" not in word
+            and "u" not in word
+        ):
             count += 1
     print("There are", count, "words that contain no vowels")
-    
+
+
 no_vowels()
 print()
 
@@ -113,6 +125,7 @@ def only_vowels():
             count += 1
     print("There are", count, "words that contain only vowels")
 
+
 only_vowels()
 print()
 
@@ -127,7 +140,8 @@ def not_contracted():
         if word.endswith("n't"):
             count += 1
     print("There are", count, "words that are contracted with not")
-    
+
+
 not_contracted()
 print()
 
@@ -145,9 +159,90 @@ def two_vowels_in_a_row():
                 count += 1
                 break
     print("There are", count, "words that contain two vowels in a row")
-    
+
+
 two_vowels_in_a_row()
 print()
 
 
 # Q10. How many words with at least two vowels are there? The vowels need not be adjacent, like in the previous problem.
+def leastTwoVowels():
+    data = open("words.txt", "r")
+    text = data.read()
+    text = text.lower()
+    pattern = "[aeiou]*"
+    answer = re.findall(pattern, text)
+    lst = []
+    for i in answer:
+        if len(i) >= 2:
+            lst.append(i)
+    # print(lst)
+    print(len(lst))
+
+
+# Part 2 - More Regex
+# 2.1
+def difference():
+    print(".* selected everything, while .*? selects nothing")
+
+
+# 2.2
+def nakamoto(filename):
+    data = open(filename, "r")
+    text = data.read()
+    pattern = "[A-Z][a-z]*\sNakamoto"
+    answer = re.findall(pattern, text)
+    return answer
+
+
+# 2.3
+def twentyToNinetyNine(filename):
+    data = open(filename, "r")
+    text = data.read()
+    pattern = "[2-9][0-9]"
+    answer = re.findall(pattern, text)
+    print(answer)
+    # print(len(answer))
+
+
+def generateNumFile(num, outputFile):
+    data = open(outputFile, "w")
+    for i in range(num):
+        data.write(str(i) + "\n")
+    data.close()
+
+
+# 2.4
+def findDollar(filename):
+    data = open(filename, "r")
+    text = data.read()
+    print(text)
+    pattern = r"\$\d*(?:,\d{3})*\.?\d{2}?"
+    answer = re.findall(pattern, text)
+    return answer
+
+
+# Part 3 - Strong Password Detection
+def passwordCheck(password):
+    pattern = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+    answer = re.findall(pattern, password)
+    if len(answer) == 0:
+        print("Not a strong password")
+    else:
+        print("Strong password")
+
+
+# Part 4 - Regex Password
+def passwordGenerator(filename, length):
+    data = open(filename, "r")
+    text = data.read()
+    text = text.lower().split()
+    password = ""
+    for i in range(length):
+        num = random.randint(0, len(text))
+        password += text[num] + "-"
+    password = password.strip("-")
+    return password
+
+
+print(passwordGenerator("words.txt", 4))
