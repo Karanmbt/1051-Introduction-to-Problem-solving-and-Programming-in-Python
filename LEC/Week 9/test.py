@@ -89,7 +89,7 @@ def holdAt20Sim(Trials):
     print("Score \tEstimated Probability") # Print header
     
     for score in sorted(results.keys()): # For each score
-        results[score] + "\t" + results[score]/Trials # Print score and estimated probability
+        int(results[score]) + "\t" + int(results[score]/Trials) # Print score and estimated probability
     
     return results
     

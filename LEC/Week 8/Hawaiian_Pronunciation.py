@@ -32,7 +32,13 @@ Consonants = {
     "ow": "w",
 }
 
-Vowels = {"a": "ah", "e": "eh", "i": "ee", "o": "oh", "u": "oo"}
+Vowels = {
+    "a": "ah",
+    "e": "eh",
+    "i": "ee",
+    "o": "oh",
+    "u": "oo"
+    }
 
 double_vowels = {
     "ai": "eye",

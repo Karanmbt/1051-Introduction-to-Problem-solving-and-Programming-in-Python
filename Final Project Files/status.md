@@ -18,11 +18,11 @@ Short answers for the below questions suffice. If you want to alter your plan fo
 
 #### What have you done for your project so far?
 
-Made a design for the main menu, tower, enemies, and map
+Made a design for the tower and enemies
 
 #### What have you not done for your project yet?
 
-I now need to make them interact with each other such as the enemys spawning and damaging the tower when they reach it, the tower automatically shooting the closest enemy until it is destroyed. Add upgrades to the tower from the coins earned by destroying the enemies.
+I now need to make a map, main menu and make the tower and enemies interact with each other such as the enemies spawning and dealing damage when they reach the end, the tower automatically shooting the closest enemy until it is destroyed. Add upgrades to the tower from the coins earned by destroying the enemies.
 
 #### What problems, if any, have you encountered?
 
