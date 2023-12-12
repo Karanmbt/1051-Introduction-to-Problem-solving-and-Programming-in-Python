@@ -27,7 +27,7 @@ TODO, if applicable
 A working main menu
 The Tower shoots the enemy
 Reward Coins for killing the enemies
-Enemies attack and decrease the tower's health
+Enemies reach the end and decrease the tower's health
 (and hopefully)
 Add damage, health, and attack speed upgrades
 
