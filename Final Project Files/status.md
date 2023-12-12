@@ -26,4 +26,4 @@ I now need to make a map, main menu and make the tower and enemies interact with
 
 #### What problems, if any, have you encountered?
 
-Not knowing the language and the engine I am using has caused a few problems, mainly not knowing how sprites interact with each other and what signals they send and how to use them in my code.
+Not knowing the language and the engine I am using has caused a few problems, mainly not knowing how nodes interact with each other and what signals they send and how to use them in my code. And also the the fact that Godot engine 4 was recently released and there aren't many youtube videos with examples of it being used in action.
