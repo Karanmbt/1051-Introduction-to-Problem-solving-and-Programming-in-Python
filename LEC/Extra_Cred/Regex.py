@@ -176,7 +176,8 @@ def leastTwoVowels():
     for i in answer:
         if len(i) >= 2:
             lst.append(i)
-    # print(lst)
+            
+
     print(len(lst))
 
 
@@ -245,4 +246,4 @@ def passwordGenerator(filename, length):
     return password
 
 
-print(passwordGenerator("words.txt", 4))
+print(passwordGenerator("LEC\Extra_Cred\words.txt", 4))
